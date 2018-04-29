@@ -17,7 +17,7 @@ public class Nuve : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (true)
+        if (!GameController.instance.gameOver)
         {
             /*movemos el meteorito de posicion */
             rb2d.transform.Translate(Vector2.left * speed * Time.deltaTime);

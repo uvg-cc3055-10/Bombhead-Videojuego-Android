@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Plataforma
+  - Deathzone
   layers:
   - Default
   - TransparentFX
@@ -49,4 +51,7 @@ TagManager:
     locked: 0
   - name: personajes
     uniqueID: 2193409357
+    locked: 0
+  - name: Plataforma
+    uniqueID: 4165752881
     locked: 0

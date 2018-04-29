@@ -21,7 +21,7 @@ public class NuveSpawner : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (true)
+        if (!GameController.instance.gameOver)
         {
             /*se incrementa el lapso de la creacion de meteriotos*/
             if (elapsedTime < spawnTime)
@@ -33,25 +33,25 @@ public class NuveSpawner : MonoBehaviour
                 control++;
                 if (control==1)
                 {
-                    float random = Random.Range(2f, 4f);
+                    float random = Random.Range(3.8f, 4.2f);
                     Instantiate(nuve1, new Vector3(16, random, 0), Quaternion.identity);
                     elapsedTime = 0;
                 }
                 if (control == 2)
                 {
-                    float random = Random.Range(2f, 4f);
+                    float random = Random.Range(3.8f, 4.2f);
                     Instantiate(nuve2, new Vector3(16, random, 0), Quaternion.identity);
                     elapsedTime = 0;
                 }
                 if (control == 3)
                 {
-                    float random = Random.Range(2f, 4f);
+                    float random = Random.Range(3.8f, 4.2f);
                     Instantiate(nuve3, new Vector3(16, random, 0), Quaternion.identity);
                     elapsedTime = 0;
                 }
                 if (control == 4)
                 {
-                    float random = Random.Range(2f, 4f);
+                    float random = Random.Range(3.8f, 4.2f);
                     Instantiate(nuve4, new Vector3(16, random, 0), Quaternion.identity);
                     elapsedTime = 0;
                     control = 0;

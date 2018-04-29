@@ -16,18 +16,18 @@ public class MontanaSpawner : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (true)
+        if (!GameController.instance.gameOver)
         {
-            /*se incrementa el lapso de la creacion de meteriotos*/
+            /*se incrementa el lapso de la creacion de montanas*/
             if (elapsedTime < spawnTime)
             {
-                elapsedTime += Time.deltaTime/100;
+                float random = Random.Range(70, 200);
+                elapsedTime += Time.deltaTime/random;
             }
             else
-            {
-                
+            {                
                 /*se crea un meteorito en una posicion al azar, partiendo desde arriba*/
-                Instantiate(montana, new Vector3(37,1, 0), Quaternion.identity);
+                Instantiate(montana, new Vector3(37,2, 0), Quaternion.identity);
                 elapsedTime = 0;
             }
         }
