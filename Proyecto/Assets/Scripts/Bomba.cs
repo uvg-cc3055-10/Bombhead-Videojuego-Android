@@ -6,7 +6,7 @@ public class Bomba : MonoBehaviour {
 
     Rigidbody2D rb2d;
     private float speed = 5f;
-    private float jumpForce = 450f;
+    public float jumpForce = 450f;
     private bool jumping = false;
 
     // Use this for initialization
