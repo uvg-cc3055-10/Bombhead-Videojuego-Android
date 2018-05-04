@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 64611954489381210}
   - component: {fileID: 23931794669413162}
   - component: {fileID: 114202743894015982}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plataformas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,9 +36,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1002330371436358}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.22279797, y: -0.62361974, z: 0.02734375}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 14.430001, y: -2.2099998, z: 0.06050651}
+  m_LocalScale: {x: 1.0701199, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plataformas:
-  - {fileID: 1342244432802668, guid: 7a40fe943a0028947ac0fa74f33426c8, type: 2}
+  - {fileID: 1020246253586496, guid: facdb832b4ea82b458bb56fbaab93c26, type: 2}
   - {fileID: 1165331593401246, guid: 697ae194e54d4c741bbcaf7c7d9a5d7a, type: 2}
   - {fileID: 1020246253586496, guid: facdb832b4ea82b458bb56fbaab93c26, type: 2}
   spawnTime: 1.23

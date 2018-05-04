@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61804301414738750}
   - component: {fileID: 50310768330200950}
   - component: {fileID: 114489738887248904}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Suelo1
   m_TagString: Plataforma
   m_Icon: {fileID: 0}

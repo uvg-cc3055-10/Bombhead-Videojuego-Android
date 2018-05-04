@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class Piso : MonoBehaviour
 {
-    Rigidbody2D rb2d;
-    float speed = 5f;
+    Rigidbody2D rb2d;    
+    float speed = 5f;    
 
     // Use this for initialization
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-
     }
 
     // Update is called once per frame
@@ -23,7 +22,7 @@ public class Piso : MonoBehaviour
             rb2d.transform.Translate(Vector2.left * speed * Time.deltaTime);
 
             /*si el meteorito sale del area visible se destruye el objeto*/
-            if (rb2d.transform.position.x < -16)
+            if (rb2d.transform.position.x < -20)
             {
                 Destroy(gameObject);
             }

@@ -236,6 +236,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Bomba.cs" />
+    <Compile Include="Assets\Scripts\Deathzone.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Montana.cs" />
     <Compile Include="Assets\Scripts\MontanaSpawner.cs" />
@@ -243,6 +244,7 @@
     <Compile Include="Assets\Scripts\NuveSpawner.cs" />
     <Compile Include="Assets\Scripts\Piso.cs" />
     <Compile Include="Assets\Scripts\PlatformSpawner.cs" />
+    <Compile Include="Assets\Scripts\Salto.cs" />
     <Compile Include="Assets\Scripts\Suelo.cs" />
     <Compile Include="Assets\Scripts\SueloSpawner.cs" />
   </ItemGroup>
