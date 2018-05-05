@@ -43,6 +43,8 @@ public class Bomba : MonoBehaviour {
         {
             jumping = false;
         }
+
+
     }        
 }
 

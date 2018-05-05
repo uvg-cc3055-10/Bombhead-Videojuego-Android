@@ -55,3 +55,6 @@ TagManager:
   - name: Plataforma
     uniqueID: 4165752881
     locked: 0
+  - name: Explosiones
+    uniqueID: 1712794391
+    locked: 0
