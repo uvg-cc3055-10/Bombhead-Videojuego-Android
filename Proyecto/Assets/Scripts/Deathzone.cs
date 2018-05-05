@@ -43,7 +43,8 @@ public class Deathzone : MonoBehaviour
             explosion2.enabled = true;
             explosion3.enabled = true;
             control = true;
-           
+
+            GameController.instance.gameOver = true;
         }
     }
 

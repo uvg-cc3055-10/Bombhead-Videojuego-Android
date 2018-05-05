@@ -950,6 +950,12 @@ Prefab:
       value: 
       objectReference: {fileID: 1342244432802668, guid: 7a40fe943a0028947ac0fa74f33426c8,
         type: 2}
+    - target: {fileID: 114202743894015982, guid: 340475c8de2334d4986a2d2f87e08feb,
+        type: 2}
+      propertyPath: plataformas.Array.data[1]
+      value: 
+      objectReference: {fileID: 1165331593401246, guid: 697ae194e54d4c741bbcaf7c7d9a5d7a,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 340475c8de2334d4986a2d2f87e08feb, type: 2}
   m_IsPrefabParent: 0
@@ -1275,7 +1281,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4629466747945502, guid: 340475c8de2334d4986a2d2f87e08feb, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 18.86
+      value: 17.25
       objectReference: {fileID: 0}
     - target: {fileID: 4629466747945502, guid: 340475c8de2334d4986a2d2f87e08feb, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1312,6 +1318,12 @@ Prefab:
     - target: {fileID: 114202743894015982, guid: 340475c8de2334d4986a2d2f87e08feb,
         type: 2}
       propertyPath: plataformas.Array.data[2]
+      value: 
+      objectReference: {fileID: 1020246253586496, guid: facdb832b4ea82b458bb56fbaab93c26,
+        type: 2}
+    - target: {fileID: 114202743894015982, guid: 340475c8de2334d4986a2d2f87e08feb,
+        type: 2}
+      propertyPath: plataformas.Array.data[1]
       value: 
       objectReference: {fileID: 1165331593401246, guid: 697ae194e54d4c741bbcaf7c7d9a5d7a,
         type: 2}

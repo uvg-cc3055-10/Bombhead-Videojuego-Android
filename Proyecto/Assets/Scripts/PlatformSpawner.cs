@@ -21,13 +21,6 @@ public class PlatformSpawner : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-        /*
-        if (!GameController.instance.gameOver)
-        {            
-
-        }
-        */
-		
 	}
 
     void GenerarPlataformas()
@@ -41,7 +34,7 @@ public class PlatformSpawner : MonoBehaviour {
             {
                 control = random;
                 GameObject plataforma = Instantiate(plataformas[random], transform.position, Quaternion.identity);
-                Invoke("GenerarPlataformas", Random.Range(2f, 3.5f));
+                Invoke("GenerarPlataformas", Random.Range(2f, 2.2f));
                 break;
 
             }             

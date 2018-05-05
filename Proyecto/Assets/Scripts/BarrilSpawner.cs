@@ -35,7 +35,6 @@ public class BarrilSpawner : MonoBehaviour
                 elapsedTime = 0;
                 
             }
-
         }
     }
 }
