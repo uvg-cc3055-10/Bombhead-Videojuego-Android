@@ -16,6 +16,7 @@ public class Montana : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        speed = PlayerPrefs.GetFloat("velocidad");
         if (!GameController.instance.gameOver)
         {
             /*movemos el meteorito de posicion */

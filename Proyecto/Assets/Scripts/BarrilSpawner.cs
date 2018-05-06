@@ -25,7 +25,7 @@ public class BarrilSpawner : MonoBehaviour
             /*se incrementa el lapso de la creacion de meteriotos*/
             if (elapsedTime < spawnTime)
             {
-                elapsedTime += Time.deltaTime / 100;
+                elapsedTime += Time.deltaTime / 10;
             }
             else
             {

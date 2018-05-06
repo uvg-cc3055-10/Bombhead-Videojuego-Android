@@ -17,6 +17,7 @@ public class Barril : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        speed = PlayerPrefs.GetFloat("velocidad");
         if (true)
         {
             rb2d.transform.Translate(Vector2.left * speed * Time.deltaTime);

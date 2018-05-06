@@ -16,6 +16,7 @@ public class Piso : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        speed = PlayerPrefs.GetFloat("velocidad");
         if (true)
         {
             /*movemos el meteorito de posicion */

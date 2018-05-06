@@ -5,7 +5,7 @@ using UnityEngine;
 public class Suelo : MonoBehaviour
 {
     Rigidbody2D rb2d;
-    float speed = 5f;
+    public float speed = 5f;
 
     // Use this for initialization
     void Start()
@@ -17,6 +17,7 @@ public class Suelo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        speed = PlayerPrefs.GetFloat("velocidad");
         if (true)
         {            
             rb2d.transform.Translate(Vector2.left * speed * Time.deltaTime);

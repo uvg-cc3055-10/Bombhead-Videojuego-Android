@@ -10,6 +10,7 @@ public class Deathzone : MonoBehaviour
     public Animator explosion3;
     bool control = false;
     public float reloj = 0;
+    public Collider2D collision;
 
 
 
@@ -19,6 +20,7 @@ public class Deathzone : MonoBehaviour
         explosion1 = GameObject.Find("Explosion1").GetComponent<Animator>();
         explosion2 = GameObject.Find("Explosion2").GetComponent<Animator>();
         explosion3 = GameObject.Find("Explosion3").GetComponent<Animator>();
+        
     }
 	
 	// Update is called once per frame
@@ -32,6 +34,8 @@ public class Deathzone : MonoBehaviour
                 SceneManager.LoadScene("Principal");
             }
         }
+
+        
 		
 	}
 

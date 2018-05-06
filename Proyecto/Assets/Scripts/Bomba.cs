@@ -44,6 +44,11 @@ public class Bomba : MonoBehaviour {
             jumping = false;
         }
 
+        if (collision.gameObject.tag.Equals("Barril"))
+        {
+            GameController.instance.contactoBarril = true;
+        }
+
 
     }        
 }
