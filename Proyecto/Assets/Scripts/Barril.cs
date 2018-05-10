@@ -18,7 +18,8 @@ public class Barril : MonoBehaviour
 	void Update ()
     {
         speed = PlayerPrefs.GetFloat("velocidad");
-        if (true)
+
+        if (!GameController.instance.gameOver)
         {
             rb2d.transform.Translate(Vector2.left * speed * Time.deltaTime);
 
@@ -28,5 +29,14 @@ public class Barril : MonoBehaviour
             }
         }
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Player"))
+        {
+            GameController.instance.contactoBarril = true;
+            Destroy(gameObject);
+        }
     }
 }

@@ -24,12 +24,11 @@ public class Bomba : MonoBehaviour {
         if (raycast.collider == null)
         {
             rb2d.AddForce(Vector2.down * 0.1f);
-        }            
-        //rb2d.transform.Translate(Vector2.left * speed * Time.deltaTime);
+        }                    
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetMouseButtonDown(0))
         {            
-            //RaycastHit2D raycast = Physics2D.Raycast(feet.transform.position, Vector2.down, 0.1f, layerMask);
+            
             if (raycast.collider != null)
             {
                 rb2d.AddForce(Vector2.up * jumpForce);
@@ -42,13 +41,7 @@ public class Bomba : MonoBehaviour {
         if (collision.gameObject.tag.Equals("Plataforma"))
         {
             jumping = false;
-        }
-
-        if (collision.gameObject.tag.Equals("Barril"))
-        {
-            GameController.instance.contactoBarril = true;
-        }
-
+        }        
 
     }        
 }

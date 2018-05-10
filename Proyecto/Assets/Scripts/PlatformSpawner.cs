@@ -7,8 +7,8 @@ public class PlatformSpawner : MonoBehaviour {
     public GameObject[] plataformas;
     public float spawnTime = 1.23f;
     public float elapsedTime = 0f;
-    public float spawnMin = 1f;
-    public float spawnMax = 3f;
+    public float spawnMin = 2f;
+    public float spawnMax = 2.2f;
     private int control = 5;    
 
     // Use this for initialization
@@ -34,8 +34,15 @@ public class PlatformSpawner : MonoBehaviour {
             {
                 control = random;
                 GameObject plataforma = Instantiate(plataformas[random], transform.position, Quaternion.identity);
-                Invoke("GenerarPlataformas", Random.Range(2f, 2.2f));
-                break;
+                Invoke("GenerarPlataformas", Random.Range(spawnMin, spawnMax));
+
+                if (spawnMin > 0.5)
+                {
+                    spawnMin = spawnMin - 0.0025f;
+                    spawnMax = spawnMax - 0.0025f;
+                }
+
+                break;                
 
             }             
         }        

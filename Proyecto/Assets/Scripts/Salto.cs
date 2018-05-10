@@ -20,7 +20,7 @@ public class Salto : MonoBehaviour {
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (fall - 1) * Time.deltaTime;
 
-        } else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
+        } else if (rb.velocity.y > 0 && !Input.GetMouseButton(0))
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (saltoBajo - 1) * Time.deltaTime;
         }

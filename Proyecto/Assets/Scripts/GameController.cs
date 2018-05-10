@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour {
     public bool contactoBarril = false;
     public Animator explosion1;
     public Animator explosion2;
+    public GameObject bomba;
     public Animator explosion3;
     bool control = false;
     public float reloj = 0;
@@ -27,19 +28,37 @@ public class GameController : MonoBehaviour {
         instance = this;
         explosion1 = GameObject.Find("Explosion1").GetComponent<Animator>();
         explosion2 = GameObject.Find("Explosion2").GetComponent<Animator>();
-        explosion3 = GameObject.Find("Explosion3").GetComponent<Animator>();
-
+        explosion3 = GameObject.Find("Explosion3").GetComponent<Animator>();        
     }
 	
 	// Update is called once per frame
 	void Update ()
-    {
-        velocidad=velocidad+0.001f;
-        PlayerPrefs.SetFloat("velocidad", velocidad);
-        tiempo++;
-        tiempoTxt.text = "Tiempo: " +tiempo;
+    {     
 
+        if (!gameOver)
+        {            
+            velocidad = velocidad + 0.001f;
+            PlayerPrefs.SetFloat("velocidad", velocidad);
+            tiempo++;
+            tiempoTxt.text = "Tiempo: " + (tiempo / 60);
 
+        } else
+        {
+            Destroy(bomba);
+            if (tiempo/60 > PlayerPrefs.GetInt("record"))
+            {
+                PlayerPrefs.SetInt("record", tiempo/60);
+            }
+        }
+
+        if (control)
+        {
+            reloj -= Time.deltaTime;
+            if (reloj <= 0)
+            {
+                SceneManager.LoadScene("Principal");
+            }
+        }
 
         if (contactoBarril)
         {
@@ -51,17 +70,7 @@ public class GameController : MonoBehaviour {
 
             GameController.instance.gameOver = true;
 
-        }
-
-        if (control)
-        {
-            reloj -= Time.deltaTime;
-            if (reloj <= 0)
-            {
-                SceneManager.LoadScene("Principal");
-            }
-        }
-        
+        }               
     }
 
     public static implicit operator GameController(Deathzone v)

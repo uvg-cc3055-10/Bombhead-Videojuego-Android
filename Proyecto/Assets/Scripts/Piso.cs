@@ -17,7 +17,7 @@ public class Piso : MonoBehaviour
     void Update()
     {
         speed = PlayerPrefs.GetFloat("velocidad");
-        if (true)
+        if (!GameController.instance.gameOver)
         {
             /*movemos el meteorito de posicion */
             rb2d.transform.Translate(Vector2.left * speed * Time.deltaTime);
