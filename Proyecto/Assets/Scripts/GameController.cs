@@ -40,11 +40,18 @@ public class GameController : MonoBehaviour {
             velocidad = velocidad + 0.001f;
             PlayerPrefs.SetFloat("velocidad", velocidad);
             tiempo++;
-            tiempoTxt.text = "Tiempo: " + (tiempo / 60);
+            tiempoTxt.text = (tiempo / 60) + "s";
 
         } else
-        {
+        {            
+
             Destroy(bomba);
+            
+            explosion1.enabled = true;
+            explosion2.enabled = true;
+            explosion3.enabled = true;
+            control = true;
+
             if (tiempo/60 > PlayerPrefs.GetInt("record"))
             {
                 PlayerPrefs.SetInt("record", tiempo/60);
@@ -62,11 +69,13 @@ public class GameController : MonoBehaviour {
 
         if (contactoBarril)
         {
+            /*
             Debug.Log("Barril feo");
             explosion1.enabled = true;
             explosion2.enabled = true;
             explosion3.enabled = true;
             control = true;
+            */
 
             GameController.instance.gameOver = true;
 

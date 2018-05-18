@@ -68,13 +68,13 @@ public class SueloSpawner : MonoBehaviour
 
         if (random < 35)
         {
-            Instantiate(suelo, new Vector3(18, -5, 0), Quaternion.identity);
+            Instantiate(suelo, new Vector3(20, -5, 0), Quaternion.identity);
             contador += 1;
         }
         else
         {
             GameController.instance.suelo = true;
-            Instantiate(suelo, new Vector3(13, -5, 0), Quaternion.identity);
+            Instantiate(suelo, new Vector3(15, -5, 0), Quaternion.identity);
         }
         
     }

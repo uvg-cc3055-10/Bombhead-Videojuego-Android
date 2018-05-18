@@ -249,6 +249,8 @@
     <Compile Include="Assets\Scripts\Bomba.cs" />
     <Compile Include="Assets\Scripts\Deathzone.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\Mecha.cs" />
+    <Compile Include="Assets\Scripts\MechasSpawner.cs" />
     <Compile Include="Assets\Scripts\MenuPrincipal.cs" />
     <Compile Include="Assets\Scripts\Montana.cs" />
     <Compile Include="Assets\Scripts\MontanaSpawner.cs" />
@@ -259,6 +261,7 @@
     <Compile Include="Assets\Scripts\Salto.cs" />
     <Compile Include="Assets\Scripts\Suelo.cs" />
     <Compile Include="Assets\Scripts\SueloSpawner.cs" />
+    <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Packages\com.unity.xiaomi\UnityChannel\XiaomiSupport\AppStoreSettings.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
