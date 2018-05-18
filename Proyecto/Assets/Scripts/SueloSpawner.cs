@@ -5,11 +5,13 @@ using UnityEngine;
 public class SueloSpawner : MonoBehaviour
 {
 
-    public GameObject suelo;   
+    public GameObject suelo;
+    public GameObject bombaMala;
     public float spawnTime = 1.23f;
     public float elapsedTime = 0f;
     private float contador;
     public int Random1;
+    int controlBombaMala = 0;
 
     // Use this for initialization
     void Start()
@@ -69,12 +71,26 @@ public class SueloSpawner : MonoBehaviour
         if (random < 35)
         {
             Instantiate(suelo, new Vector3(20, -5, 0), Quaternion.identity);
+            controlBombaMala += 1;
+            
+            if (controlBombaMala > 10)
+            {
+                Instantiate(bombaMala, new Vector3(20, -4, 0), Quaternion.identity);
+                controlBombaMala = 0;
+            }
             contador += 1;
         }
         else
         {
             GameController.instance.suelo = true;
             Instantiate(suelo, new Vector3(15, -5, 0), Quaternion.identity);
+            controlBombaMala += 1;
+            if (controlBombaMala>10)
+            {
+                Instantiate(bombaMala, new Vector3(15, -4, 0), Quaternion.identity);
+                controlBombaMala=0;
+            }
+            
         }
         
     }

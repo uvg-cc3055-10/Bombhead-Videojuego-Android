@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4989898161527998}
   - component: {fileID: 70858003192994988}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Barril
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 50950827878393994}
   - component: {fileID: 70997334790110110}
   - component: {fileID: 114852398403581286}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Barril
   m_TagString: Untagged
   m_Icon: {fileID: 0}

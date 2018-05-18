@@ -24,7 +24,13 @@ public class Bomba : MonoBehaviour {
         if (raycast.collider == null)
         {
             rb2d.AddForce(Vector2.down * 0.1f);
-        }                    
+        }
+
+        if (Input.GetKey("a"))
+        {
+            rb2d.AddForce(Vector2.down * 5f);
+        }
+
 
         if (Input.GetMouseButtonDown(0))
         {            

@@ -1327,6 +1327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   suelo: {fileID: 1426282329686298, guid: 727a72f3b7666a841b67859075113b42, type: 2}
+  bombaMala: {fileID: 1537469106679098, guid: 2df84ea40bfeeda4da8f4f4f17491b63, type: 2}
   spawnTime: 1.23
   elapsedTime: 0
   Random1: 0
@@ -1681,7 +1682,7 @@ SpriteRenderer:
   m_Size: {x: 27.269999, y: 10.05}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!4 &1694775181
 Transform:
