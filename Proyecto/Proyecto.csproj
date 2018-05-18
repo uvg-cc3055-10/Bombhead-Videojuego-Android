@@ -247,6 +247,7 @@
     <Compile Include="Assets\Scripts\Barril.cs" />
     <Compile Include="Assets\Scripts\BarrilSpawner.cs" />
     <Compile Include="Assets\Scripts\Bomba.cs" />
+    <Compile Include="Assets\Scripts\bombaMala.cs" />
     <Compile Include="Assets\Scripts\Deathzone.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Mecha.cs" />

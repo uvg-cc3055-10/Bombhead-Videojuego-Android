@@ -16,7 +16,8 @@ public class bombaMala : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        speed = PlayerPrefs.GetFloat("velocidad");
+        
+        speed = PlayerPrefs.GetFloat("velocidad") + Random.Range(3f,5f);
 
         if (!GameController.instance.gameOver)
         {
