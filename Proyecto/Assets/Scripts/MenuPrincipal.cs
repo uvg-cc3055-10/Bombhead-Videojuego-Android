@@ -13,7 +13,7 @@ public class MenuPrincipal : MonoBehaviour {
     void Start () {
 
         record = PlayerPrefs.GetInt("record");        
-        recordTxt.text = "Record: " + record + "s";
+        recordTxt.text = record+"";
         
     }
 	

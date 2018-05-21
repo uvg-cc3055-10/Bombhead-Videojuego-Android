@@ -15,7 +15,8 @@ public class Salto : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	public void saltar () {
+
 		if (rb.velocity.y < 0)
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (fall - 1) * Time.deltaTime;
@@ -23,9 +24,6 @@ public class Salto : MonoBehaviour {
         } else if (rb.velocity.y > 0 && !Input.GetMouseButton(0))
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (saltoBajo - 1) * Time.deltaTime;
-        }
-        {
-
         }
 	}
 }

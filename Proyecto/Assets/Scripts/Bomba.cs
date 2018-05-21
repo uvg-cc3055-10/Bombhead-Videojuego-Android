@@ -4,112 +4,135 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class Bomba : MonoBehaviour {
-
-    //inside class
-    Vector2 firstPressPos;
-    Vector2 secondPressPos;
-    Vector2 currentSwipe;
+public class Bomba : MonoBehaviour
+{
 
     Rigidbody2D rb2d;
     private float speed = 5f;
-    public float jumpForce = 550f;
-    private bool jumping = false;
+    public float jumpForce = 630f;
     public GameObject feet;
     public LayerMask layerMask;
 
+    CircleCollider2D circle;
+
+    public float fall = 2.5f;
+    public float saltoBajo = 2f;
+
+    private int doubleJump;
+
+    public Image D1;
+    public Image D2;
+    public Image D3;
+
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         rb2d = GetComponent<Rigidbody2D>();
+        circle = GetComponent<CircleCollider2D>();
+        doubleJump = 1;
+
+        D1.color = new Color32(255, 255, 255, 255);
     }
 
     // Update is called once per frame
     void Update()
     {
         RaycastHit2D raycast = Physics2D.Raycast(feet.transform.position, Vector2.down, 0.1f, layerMask);
+
         if (raycast.collider == null)
         {
             rb2d.AddForce(Vector2.down * 0.1f);
         }
 
-        if (Input.GetKey("a"))
+        if (rb2d.velocity.y < 0)
         {
-            rb2d.AddForce(Vector2.down * 5f);
-        }        
+            rb2d.velocity += Vector2.up * Physics2D.gravity.y * (fall - 1) * Time.deltaTime;
 
-        if (Input.touchCount > 0)
+        }
+        else if (rb2d.velocity.y > 0 && !Input.GetMouseButton(0))
         {
-            Swipe(raycast);
-            /*
-            if (Input.GetTouch(0).phase == TouchPhase.Began)
-            {
-                if (raycast.collider != null)
-                {
-                    rb2d.AddForce(Vector2.up * jumpForce);
-                }
-            }
+            rb2d.velocity += Vector2.up * Physics2D.gravity.y * (saltoBajo - 1) * Time.deltaTime;
+        }
 
-            else if (Input.GetTouch(0).phase == TouchPhase.Moved)
+    }
+
+    public void salto()
+    {
+
+        RaycastHit2D raycast = Physics2D.Raycast(feet.transform.position, Vector2.down, 0.1f, layerMask);
+
+        if (raycast.collider != null)
+        {
+            rb2d.AddForce(Vector2.up * jumpForce);
+        } 
+        
+
+        if (raycast.collider == null && doubleJump>0)
+        {
+            rb2d.AddForce(Vector2.up * jumpForce);
+
+            doubleJump -= 1;
+
+            if (doubleJump==0)
             {
-                Debug.Log("ABAJOO");
-            }
-            */
+                D1.color = new Color32(255, 255, 255, 0);
+
+            } else if (doubleJump == 1)
+            {
+                D2.color = new Color32(255, 255, 255, 0);
+
+            } else if (doubleJump == 2)
+            {
+                D3.color = new Color32(255, 255, 255, 0);
+            }            
+
+        }
+
+    }
+
+    public void bajar()
+    {
+        RaycastHit2D raycast = Physics2D.Raycast(feet.transform.position, Vector2.down, 0.1f, layerMask);
+
+        if (raycast.collider.tag.Equals("Plataforma"))
+        {
+            StartCoroutine(esperar());
+
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    IEnumerator esperar()
     {
-        if (collision.gameObject.tag.Equals("Plataforma"))
-        {
-            jumping = false;
-        }        
 
-    }    
+        circle.enabled = false;
 
-    public void Swipe(RaycastHit2D raycast)
+        rb2d.AddForce(Vector2.down * 125f);
+
+        yield return new WaitForSeconds(0.12f);
+
+        circle.enabled = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (Input.touches.Length > 0)
+        if (collision.gameObject.tag.Equals("Dos") && doubleJump < 4)
         {
-            Touch t = Input.GetTouch(0);
-            
-            if (t.phase == TouchPhase.Ended)
+            doubleJump++;
+
+            if (doubleJump == 1)
             {
-                //save ended touch 2d point
-                secondPressPos = new Vector2(t.position.x, t.position.y);
+                D1.color = new Color32(255, 255, 255, 255);
 
-                //create vector from the two points
-                currentSwipe = new Vector3(secondPressPos.x - firstPressPos.x, secondPressPos.y - firstPressPos.y);
-
-                //normalize the 2d vector
-                currentSwipe.Normalize();
-
-                //swipe upwards
-                if (currentSwipe.y > 0 && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f)
-                {
-                    Debug.Log("arriba");
-                }
-                //swipe down
-                if (currentSwipe.y < 0 && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f)
-                {
-                    rb2d.AddForce(Vector2.down * jumpForce);
-                    Debug.Log("abajo");
-                }
-
-
-            if (t.phase == TouchPhase.Began)
-            {
-
-                if (raycast.collider != null)
-                {
-                    rb2d.AddForce(Vector2.up * jumpForce);
-                }
-
-                //save began touch 2d point
-                firstPressPos = new Vector2(t.position.x, t.position.y);
             }
+            else if (doubleJump == 2)
+            {
+                D2.color = new Color32(255, 255, 255, 255);
 
+            }
+            else if (doubleJump == 3)
+            {
+                D3.color = new Color32(255, 255, 255, 255);
+            }
         }
     }
 }
-
-

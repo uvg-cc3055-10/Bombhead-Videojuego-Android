@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4613977919992228}
   m_Layer: 0
   m_Name: Personaje
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,6 +152,11 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 256
+  fall: 2.5
+  saltoBajo: 2
+  D1: {fileID: 0}
+  D2: {fileID: 0}
+  D3: {fileID: 0}
 --- !u!212 &212311061122768154
 SpriteRenderer:
   m_ObjectHideFlags: 1

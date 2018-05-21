@@ -7,6 +7,9 @@ TagManager:
   - Plataforma
   - Deathzone
   - Barril
+  - Suelo
+  - Boton
+  - Dos
   layers:
   - Default
   - TransparentFX

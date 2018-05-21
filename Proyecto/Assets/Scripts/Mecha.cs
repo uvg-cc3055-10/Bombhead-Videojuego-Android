@@ -39,11 +39,9 @@ public class Mecha : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Player"))
         {
+            timer.addTime(4f);
             Destroy(gameObject);
-        }
-
-        timer.addTime(4f);
-
+        }      
     }
 
 }
