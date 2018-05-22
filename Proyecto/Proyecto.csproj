@@ -247,27 +247,28 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Barril.cs" />
-    <Compile Include="Assets\Scripts\BarrilSpawner.cs" />
-    <Compile Include="Assets\Scripts\Bomba.cs" />
-    <Compile Include="Assets\Scripts\bombaMala.cs" />
-    <Compile Include="Assets\Scripts\Deathzone.cs" />
-    <Compile Include="Assets\Scripts\Dos.cs" />
-    <Compile Include="Assets\Scripts\DosSpawner.cs" />
-    <Compile Include="Assets\Scripts\GameController.cs" />
-    <Compile Include="Assets\Scripts\Mecha.cs" />
-    <Compile Include="Assets\Scripts\MechasSpawner.cs" />
-    <Compile Include="Assets\Scripts\MenuPrincipal.cs" />
-    <Compile Include="Assets\Scripts\Montana.cs" />
-    <Compile Include="Assets\Scripts\MontanaSpawner.cs" />
-    <Compile Include="Assets\Scripts\Nuve.cs" />
-    <Compile Include="Assets\Scripts\NuveSpawner.cs" />
-    <Compile Include="Assets\Scripts\Piso.cs" />
-    <Compile Include="Assets\Scripts\PlatformSpawner.cs" />
-    <Compile Include="Assets\Scripts\Salto.cs" />
-    <Compile Include="Assets\Scripts\Suelo.cs" />
-    <Compile Include="Assets\Scripts\SueloSpawner.cs" />
-    <Compile Include="Assets\Scripts\Timer.cs" />
+    <Compile Include="Assets\Scripts\Background\Montana.cs" />
+    <Compile Include="Assets\Scripts\Background\MontanaSpawner.cs" />
+    <Compile Include="Assets\Scripts\Background\Nuve.cs" />
+    <Compile Include="Assets\Scripts\Background\NuveSpawner.cs" />
+    <Compile Include="Assets\Scripts\Background\Piso.cs" />
+    <Compile Include="Assets\Scripts\Background\PlatformSpawner.cs" />
+    <Compile Include="Assets\Scripts\Background\Suelo.cs" />
+    <Compile Include="Assets\Scripts\Background\SueloSpawner.cs" />
+    <Compile Include="Assets\Scripts\Comportamientos\Creditos.cs" />
+    <Compile Include="Assets\Scripts\Comportamientos\Deathzone.cs" />
+    <Compile Include="Assets\Scripts\Comportamientos\GameController.cs" />
+    <Compile Include="Assets\Scripts\Comportamientos\MenuPrincipal.cs" />
+    <Compile Include="Assets\Scripts\Comportamientos\Salto.cs" />
+    <Compile Include="Assets\Scripts\Comportamientos\Timer.cs" />
+    <Compile Include="Assets\Scripts\Personajes\Barril.cs" />
+    <Compile Include="Assets\Scripts\Personajes\BarrilSpawner.cs" />
+    <Compile Include="Assets\Scripts\Personajes\Bomba.cs" />
+    <Compile Include="Assets\Scripts\Personajes\bombaMala.cs" />
+    <Compile Include="Assets\Scripts\Power - ups\Dos.cs" />
+    <Compile Include="Assets\Scripts\Power - ups\DosSpawner.cs" />
+    <Compile Include="Assets\Scripts\Power - ups\Mecha.cs" />
+    <Compile Include="Assets\Scripts\Power - ups\MechasSpawner.cs" />
     <Compile Include="Packages\com.unity.xiaomi\UnityChannel\XiaomiSupport\AppStoreSettings.cs" />
   </ItemGroup>
   <ItemGroup>
