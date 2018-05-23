@@ -14,7 +14,7 @@ using UnityEngine;
 public class Fondito : MonoBehaviour
 {
     Rigidbody2D rb2d;
-    float speed = 1.1f;
+    float speed = 1.72f;
 
     // Use this for initialization
     void Start()
