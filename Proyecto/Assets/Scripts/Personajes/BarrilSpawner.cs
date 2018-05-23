@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+            Proyecto Final Plataformas Moviles y Juegos
+    Autores: 
+        Jose Cifuentes - 17509 
+        Oscar Juarez   - 17315
+
+    Fecha:
+        22/05/2018 
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

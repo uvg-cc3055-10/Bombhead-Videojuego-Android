@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+            Proyecto Final Plataformas Moviles y Juegos
+    Autores: 
+        Jose Cifuentes - 17509 
+        Oscar Juarez   - 17315
+
+    Fecha:
+        22/05/2018 
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,6 +25,7 @@ public class MontanaSpawner : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        // si no ha perdido el jugador
         if (!GameController.instance.gameOver)
         {
             /*se incrementa el lapso de la creacion de montanas*/
@@ -26,7 +36,7 @@ public class MontanaSpawner : MonoBehaviour
             }
             else
             {                
-                /*se crea un meteorito en una posicion al azar, partiendo desde arriba*/
+                /*se crea una montana en una posicion al azar, partiendo desde arriba*/
                 Instantiate(montana, new Vector3(37,2, 0), Quaternion.identity);
                 elapsedTime = 0;
             }

@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+            Proyecto Final Plataformas Moviles y Juegos
+    Autores: 
+        Jose Cifuentes - 17509 
+        Oscar Juarez   - 17315
+
+    Fecha:
+        22/05/2018 
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,14 +31,16 @@ public class Dos : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        // se carga la variable almacenada en memoria
+        speed = PlayerPrefs.GetFloat("velocidad"); 
 
-        speed = PlayerPrefs.GetFloat("velocidad");
+        //mientras el jugador no pierda
         if (!GameController.instance.gameOver)
         {
-            /*movemos el meteorito de posicion */
+            /*movemos el dos de posicion */
             rb2d.transform.Translate(Vector2.left * speed * Time.deltaTime);
 
-            /*si el meteorito sale del area visible se destruye el objeto*/
+            /*si el dos sale del area visible se destruye el objeto*/
             if (rb2d.transform.position.x < -20)
             {
                 Destroy(gameObject);
@@ -40,6 +51,7 @@ public class Dos : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        //si la bomba hagarra un 2
         if (collision.gameObject.tag.Equals("Player") && control)
         {
             audio.Play();

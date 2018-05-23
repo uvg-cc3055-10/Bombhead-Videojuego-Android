@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+            Proyecto Final Plataformas Moviles y Juegos
+    Autores: 
+        Jose Cifuentes - 17509 
+        Oscar Juarez   - 17315
+
+    Fecha:
+        22/05/2018 
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,9 +31,11 @@ public class SueloSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        // si no ha perdido el jugador
         if (!GameController.instance.gameOver)
         {
+            //si no ha llegado al tiempo de crear un nuevo suelo
+            //se aumenta la variable
 
             if (elapsedTime < spawnTime)
             {                
@@ -33,9 +44,13 @@ public class SueloSpawner : MonoBehaviour
 
             else
             {
+                //se crea un random de entre 9 y 15
                 Random1 = Random.Range(9, 15);
+                //se crea un suelo y se 
                 StartCoroutine(CrearSuelo());
+                //se reinicia elapsedTime
                 elapsedTime = 0;
+
 
                 if (spawnTime > 0.8f)
                 {
@@ -56,8 +71,10 @@ public class SueloSpawner : MonoBehaviour
 
     }
 
+    //metodo para crear un suelo
     IEnumerator CrearSuelo()
-    {        
+    {     
+
 
         if (contador == Random1)
         {
@@ -73,6 +90,7 @@ public class SueloSpawner : MonoBehaviour
             Instantiate(suelo, new Vector3(20, -5, 0), Quaternion.identity);
             controlBombaMala += 1;
             
+            //se crea una bomba mala justo encima del suelo, dependiendo que caso se cumpla
             if (controlBombaMala > 10)
             {
                 Instantiate(bombaMala, new Vector3(20, -4, 0), Quaternion.identity);
@@ -86,7 +104,7 @@ public class SueloSpawner : MonoBehaviour
             Instantiate(suelo, new Vector3(15, -5, 0), Quaternion.identity);
             controlBombaMala += 1;
             if (controlBombaMala>10)
-            {
+            {   
                 Instantiate(bombaMala, new Vector3(15, -4, 0), Quaternion.identity);
                 controlBombaMala=0;
             }

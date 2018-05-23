@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+            Proyecto Final Plataformas Moviles y Juegos
+    Autores: 
+        Jose Cifuentes - 17509 
+        Oscar Juarez   - 17315
+
+    Fecha:
+        22/05/2018 
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,13 +34,16 @@ public class Mecha : MonoBehaviour
     // Update is called once per frame
     void Update()
     {        
+        //se varga la variable almacenada en memoria
         speed = PlayerPrefs.GetFloat("velocidad");
+
+        //mientras este viva la bomba
         if (!GameController.instance.gameOver)
         {
-            /*movemos el meteorito de posicion */
+            /*movemos la mecha de posicion */
             rb2d.transform.Translate(Vector2.left * speed * Time.deltaTime);
 
-            /*si el meteorito sale del area visible se destruye el objeto*/
+            /*si la mecha sale del area visible se destruye el objeto*/
             if (rb2d.transform.position.x < -20)
             {
                 Destroy(gameObject);
@@ -42,10 +54,11 @@ public class Mecha : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        //si la bomba colisiona con la mecha
         if (collision.gameObject.tag.Equals("Player") && control)
         {
-            audio.Play();
-            timer.addTime(5.1f);
+            audio.Play();//suena efecto
+            timer.addTime(5.1f);// se agrega tiempo de vida a la bomba
             sprite.color = new Color32(255, 255, 255, 0);
             control = false;
         }      

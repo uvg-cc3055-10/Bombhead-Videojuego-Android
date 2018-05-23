@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+            Proyecto Final Plataformas Moviles y Juegos
+    Autores: 
+        Jose Cifuentes - 17509 
+        Oscar Juarez   - 17315
+
+    Fecha:
+        22/05/2018 
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,14 +26,16 @@ public class Nuve : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        speed = PlayerPrefs.GetFloat("velocidad");
+        speed = PlayerPrefs.GetFloat("velocidad"); // se carga la variable guardada en memoria
+
+        //si no ha perdido el jugador
         if (!GameController.instance.gameOver)
         {
             
-            /*movemos el meteorito de posicion */
+            /*movemos la nube de posicion */
             rb2d.transform.Translate(Vector2.left * speed * Time.deltaTime);
 
-            /*si el meteorito sale del area visible se destruye el objeto*/
+            /*si la nube sale del area visible se destruye el objeto*/
             if (rb2d.transform.position.x<-16)
             {
                 Destroy(gameObject);

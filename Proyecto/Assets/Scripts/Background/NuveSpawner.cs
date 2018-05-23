@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+            Proyecto Final Plataformas Moviles y Juegos
+    Autores: 
+        Jose Cifuentes - 17509 
+        Oscar Juarez   - 17315
+
+    Fecha:
+        22/05/2018 
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,9 +30,10 @@ public class NuveSpawner : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        //si el jugador no ha perdido
         if (!GameController.instance.gameOver)
         {
-            /*se incrementa el lapso de la creacion de meteriotos*/
+            /*se incrementa el lapso de la creacion de nube*/
             if (elapsedTime < spawnTime)
             {
                 elapsedTime += Time.deltaTime/10;
@@ -31,6 +41,7 @@ public class NuveSpawner : MonoBehaviour
             else
             {
                 control++;
+                //se crean 4 diferentes tipos de nubes, en una posicion al azar
                 if (control==1)
                 {
                     float random = Random.Range(3.8f, 4.2f);

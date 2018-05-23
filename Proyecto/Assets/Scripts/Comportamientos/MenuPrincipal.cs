@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+            Proyecto Final Plataformas Moviles y Juegos
+    Autores: 
+        Jose Cifuentes - 17509 
+        Oscar Juarez   - 17315
+
+    Fecha:
+        22/05/2018 
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,7 +21,7 @@ public class MenuPrincipal : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        record = PlayerPrefs.GetInt("record");        
+        record = PlayerPrefs.GetInt("record");//extraemos la variable guardada en memoria        
         recordTxt.text = record+"";
         
     }
@@ -22,6 +31,7 @@ public class MenuPrincipal : MonoBehaviour {
 		
 	}    
 
+    // metodos para cambiar de escena al presionar un boton
     public void startGame()
     {
         SceneManager.LoadScene("Mundo");

@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+            Proyecto Final Plataformas Moviles y Juegos
+    Autores: 
+        Jose Cifuentes - 17509 
+        Oscar Juarez   - 17315
+
+    Fecha:
+        22/05/2018 
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -42,18 +51,22 @@ public class Bomba : MonoBehaviour
     {
         RaycastHit2D raycast = Physics2D.Raycast(feet.transform.position, Vector2.down, 0.1f, layerMask);
 
+        //si no esta topando con el suelo se crea una fuerza para abajo
         if (raycast.collider == null)
         {
             rb2d.AddForce(Vector2.down * 0.1f);
         }
 
+        // si la velocidad es negativa
         if (rb2d.velocity.y < 0)
         {
             rb2d.velocity += Vector2.up * Physics2D.gravity.y * (fall - 1) * Time.deltaTime;
 
         }
+        // si la velocidad es mayor a 0 y no ha presionado la pantalla
         else if (rb2d.velocity.y > 0 && !Input.GetMouseButton(0))
         {
+            //se hace un salto alto
             rb2d.velocity += Vector2.up * Physics2D.gravity.y * (saltoBajo - 1) * Time.deltaTime;
         }
 

@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+            Proyecto Final Plataformas Moviles y Juegos
+    Autores: 
+        Jose Cifuentes - 17509 
+        Oscar Juarez   - 17315
+
+    Fecha:
+        22/05/2018 
+*/
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -40,25 +49,28 @@ public class GameController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {     
-
+        // mientras no se muera la bomba
         if (!gameOver)
-        {            
+        {       
+            //se actualiza la variable de velocidad almacenada en memoria
             velocidad = velocidad + 0.001f;
             PlayerPrefs.SetFloat("velocidad", velocidad);
+            //se acrualiza el punteo
             tiempo++;
             tiempoTxt.text = (tiempo / 60) + " s";
 
         } else
         {
-
+            //cuando controlAudio es true se reproduce el sonido y se para
             if (!controlAudio)
             {
                 reproducirExplosion(explosionSE);
                 controlAudio = true;
             }
             
-            Destroy(bomba);
-            
+            Destroy(bomba);//se destruye la bomba
+
+            //re ejecutan las explosiones            
             explosion1.enabled = true;
             explosion2.enabled = true;
             explosion3.enabled = true;
@@ -72,6 +84,7 @@ public class GameController : MonoBehaviour {
 
         if (control)
         {
+            //hacemos un timer para cambiar de escena 
             reloj -= Time.deltaTime;
             if (reloj <= 0)
             {
