@@ -16,6 +16,7 @@ using UnityEngine;
 public class Bomba : MonoBehaviour
 {
 
+    // Se declaran las variables
     Rigidbody2D rb2d;
     private float speed = 5f;
     public float jumpForce = 630f;
@@ -75,15 +76,18 @@ public class Bomba : MonoBehaviour
     public void salto()
     {
 
+        //Se crea un raycast
         RaycastHit2D raycast = Physics2D.Raycast(feet.transform.position, Vector2.down, 0.1f, layerMask);
 
+        //Si la bomba esta sobre una superficie, salta
         if (raycast.collider != null)
         {
             audio.Play();
             rb2d.AddForce(Vector2.up * jumpForce);
         } 
         
-
+        //Si el usuario tiene dobles saltos disponibles, se realiza en doble salto y se
+        //resta uno al total de dobles saltos
         if (raycast.collider == null && doubleJump>0)
         {
             audio.Play();
@@ -91,6 +95,7 @@ public class Bomba : MonoBehaviour
 
             doubleJump -= 1;
 
+            //Se hace invisible la imagen del doble salto correspondiente
             if (doubleJump==0)
             {
                 D1.color = new Color32(255, 255, 255, 0);
@@ -110,8 +115,10 @@ public class Bomba : MonoBehaviour
 
     public void bajar()
     {
+        //Se crea un raycast
         RaycastHit2D raycast = Physics2D.Raycast(feet.transform.position, Vector2.down, 0.1f, layerMask);
 
+        //Si esta sobre una plataforma, se ejecuta la co-rutina para bajar de plataforma
         if (raycast.collider.tag.Equals("Plataforma"))
         {
             StartCoroutine(esperar());
@@ -122,21 +129,30 @@ public class Bomba : MonoBehaviour
     IEnumerator esperar()
     {
 
+        //Se desactiva el collider de la bomba
         circle.enabled = false;
 
+        //Se imprime una fuerza hacia abajo
         rb2d.AddForce(Vector2.down * 125f);
 
+        //Se espera .12 segundos
         yield return new WaitForSeconds(0.12f);
 
+        //Se vuelve a activar el collider, dando la ilusion que bajo la plataforma
         circle.enabled = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Si la bomba choca con un dos y su variable doubleJump es menor a 4
         if (collision.gameObject.tag.Equals("Dos") && doubleJump < 4)
         {
+
+            //Se agrega un salto doble
             doubleJump++;
 
+            //Se muestra la imagen del dos, dependiendo de la cantidad de dobles
+            //saltos que tenga
             if (doubleJump == 1)
             {
                 D1.color = new Color32(255, 255, 255, 255);

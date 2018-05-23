@@ -28,7 +28,7 @@ public class Creditos : MonoBehaviour {
         rb.transform.Translate(Vector2.up * speed * Time.deltaTime);
 
         //si salen de la zona visible se destruye el objeto
-        if (rb.transform.position.y > 860)
+        if (rb.transform.position.y > 1200)
         {
             Destroy(gameObject);
         }

@@ -14,7 +14,7 @@ using UnityEngine;
 public class Fondito : MonoBehaviour
 {
     Rigidbody2D rb2d;
-    float speed = 0.5f;
+    float speed = 1.1f;
 
     // Use this for initialization
     void Start()
@@ -31,7 +31,7 @@ public class Fondito : MonoBehaviour
             /*movemos el fondo de posicion */
             rb2d.transform.Translate(Vector2.left * speed * Time.deltaTime);
 
-            /*si el fondo sale del area visible se destruye el objeto*/
+            /*si el fondo sale del area visible se traslada el objeto*/
             if (rb2d.transform.position.x < -174)
             {
                 rb2d.transform.Translate(new Vector3(346, -0.07f,0));
