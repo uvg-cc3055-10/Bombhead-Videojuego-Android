@@ -36,8 +36,8 @@ public class MechasSpawner : MonoBehaviour
 
             if (spawnMin > 0.5)
             {
-                spawnMin = spawnMin - 0.0012f;
-                spawnMax = spawnMax - 0.0012f;
+                spawnMin = spawnMin - 0;
+                spawnMax = spawnMax - 0;
                 break;
             }
         }

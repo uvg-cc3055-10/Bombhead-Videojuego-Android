@@ -45,7 +45,7 @@ public class Mecha : MonoBehaviour
         if (collision.gameObject.tag.Equals("Player") && control)
         {
             audio.Play();
-            timer.addTime(4f);
+            timer.addTime(5.1f);
             sprite.color = new Color32(255, 255, 255, 0);
             control = false;
         }      

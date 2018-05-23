@@ -247,6 +247,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Background\Fondito.cs" />
     <Compile Include="Assets\Scripts\Background\Montana.cs" />
     <Compile Include="Assets\Scripts\Background\MontanaSpawner.cs" />
     <Compile Include="Assets\Scripts\Background\Nuve.cs" />
@@ -261,6 +262,7 @@
     <Compile Include="Assets\Scripts\Comportamientos\MenuPrincipal.cs" />
     <Compile Include="Assets\Scripts\Comportamientos\Salto.cs" />
     <Compile Include="Assets\Scripts\Comportamientos\Timer.cs" />
+    <Compile Include="Assets\Scripts\Comportamientos\Tutorial.cs" />
     <Compile Include="Assets\Scripts\Personajes\Barril.cs" />
     <Compile Include="Assets\Scripts\Personajes\BarrilSpawner.cs" />
     <Compile Include="Assets\Scripts\Personajes\Bomba.cs" />

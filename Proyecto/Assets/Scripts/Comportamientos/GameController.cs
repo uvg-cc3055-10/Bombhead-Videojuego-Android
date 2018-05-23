@@ -46,7 +46,7 @@ public class GameController : MonoBehaviour {
             velocidad = velocidad + 0.001f;
             PlayerPrefs.SetFloat("velocidad", velocidad);
             tiempo++;
-            tiempoTxt.text = (tiempo / 60) + "s";
+            tiempoTxt.text = (tiempo / 60) + " s";
 
         } else
         {
