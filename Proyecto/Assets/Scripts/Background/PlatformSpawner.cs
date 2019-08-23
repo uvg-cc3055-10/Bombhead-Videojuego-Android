@@ -38,7 +38,7 @@ public class PlatformSpawner : MonoBehaviour {
         //Procedimiento para generar una plataforma
         while (true)
         {
-            int random = Random.Range(0, plataformas.GetLength(0));            
+            int random = Random.Range(0, plataformas.GetLength(0));
             
             //Dependiendo del random se genera una distinta plataforma
             // no se pueden generar 2 tipos de la misma plataforma juntas
@@ -56,7 +56,7 @@ public class PlatformSpawner : MonoBehaviour {
                     spawnMax = spawnMax - 0.0025f;
                 }
 
-                break;                
+                break;         
 
             }             
         }        

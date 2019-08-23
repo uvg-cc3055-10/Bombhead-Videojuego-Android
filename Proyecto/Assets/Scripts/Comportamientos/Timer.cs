@@ -1,4 +1,4 @@
-﻿/*
+﻿    /*
             Proyecto Final Plataformas Moviles y Juegos
     Autores: 
         Jose Cifuentes - 17509 
@@ -15,8 +15,8 @@ using UnityEngine;
 public class Timer : MonoBehaviour {
 
     public int startingTime = 25;
-    public float currentTime;    
-    public Image timeImage;    
+    public float currentTime;
+    public Image timeImage; 
 
     // Use this for initialization
     void Start () {
@@ -35,7 +35,7 @@ public class Timer : MonoBehaviour {
         {
             //se resta al tiempo y se reposiciona la barra
             currentTime -= Time.deltaTime;
-            timeImage.fillAmount = (currentTime / 25);
+            timeImage.fillAmount = (currentTime/25);
 
             //si esta dentro de cierto rango se cambia de color a la barra
             if (currentTime <= 12  && currentTime >5)
